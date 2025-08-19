@@ -17,6 +17,19 @@
       animation: spectralShift 30s ease infinite;
     }
 
+    .logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.logo-container img {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 0, 0.5));
+}
+
     @keyframes spectralShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -110,20 +123,40 @@
         font-size: 1rem;
       }
     }
+
+    @media (max-width: 600px) {
+  .logo-container {
+    position: static;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .logo-container img {
+    width: 100px;
+    filter: drop-shadow(0 0 4px rgba(0, 255, 0, 0.4));
+  }
+
+  header.container {
+    padding-top: 140px; /* optional: adds breathing room if needed */
+  }
+}
   </style>
 </head>
 <body>
+  
   <a href="#main-content" class="skip-link">Skip to content</a>
 
   <header class="container" role="banner">
-    <img src="GhostlyBonds.png" alt="Ghostly Bonds logo">
+	<div class="logo-container">
+    <img src="GBlogo.png" alt="Ghostly Bonds logo with swirling green ghost design">
+</div>
+	<img src="GhostlyBonds.png" alt="Ghostly Bonds logo">
     <nav class="nav-buttons" role="navigation" aria-label="Main navigation">
       <a href="index.html" aria-label="Home page">Home</a>
       <a href="posts.html" aria-label="Posts page">Posts</a>
       <a href="help.html" aria-label="Need Support">Need support?</a>
       <a href="contactus.html" aria-label="Contact Us page">Contact Us</a>
     </nav>
-  </header>
 
   <main id="main-content" role="main">
     <h1>Home</h1>
